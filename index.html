@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sewinator</title>
+</head>
+<body>
+  <h1>Sewinator</h1>
+
+  <div id="input">
+    <label for="bust">Bust</label> <input id="bust" type="text"> <br>
+    <label for="ribs">Ribs</label> <input id="ribs" type="text">
+  </div>
+
+  <div id="measurements">
+    Bust: <span class="bust"></span><br>
+    Ribs: <span class="ribs"></span><br>
+    Bodice: <span class="bodice"></span><br>
+    Darts: <span class="darts"></span><br>
+  </div>
+</body>
+
+<script>
+
+  var get = function(selector) {
+    return document.querySelector(selector);
+  };
+
+  get("#bust").onchange = function() {
+    calculate();
+  };
+
+  get("#ribs").onchange = function() {
+    calculate();
+  };
+
+  var calculate = function(){
+
+    var bust = parseInt(get("#bust").value);
+    //if isNaN(bust){ return; };
+    get("#measurements>.bust").innerHTML = bust;
+    get("#measurements>.bodice").innerHTML = bust - 7.0;
+
+    var ribs = parseInt(get("#ribs").value);
+    //if isNaN(ribs){ return; };
+    get("#measurements>.ribs").innerHTML = ribs;
+    get("#measurements>.darts").innerHTML = (bust - ribs) / 2.0;
+  }
+
+</script>
+</html>
