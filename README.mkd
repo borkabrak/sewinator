@@ -1,0 +1,4 @@
+Sewinator
+=========
+
+A simple tool for calculating sewing measurements.
