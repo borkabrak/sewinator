@@ -36,12 +36,12 @@
 
   var calculate = function(){
 
-    var bust = parseInt(get("#bust").value);
+    var bust = parseFloat(get("#bust").value);
     //if isNaN(bust){ return; };
     get("#measurements>.bust").innerHTML = bust;
     get("#measurements>.bodice").innerHTML = bust - 7.0;
 
-    var ribs = parseInt(get("#ribs").value);
+    var ribs = parseFloat(get("#ribs").value);
     //if isNaN(ribs){ return; };
     get("#measurements>.ribs").innerHTML = ribs;
     get("#measurements>.darts").innerHTML = (bust - ribs) / 2.0;
